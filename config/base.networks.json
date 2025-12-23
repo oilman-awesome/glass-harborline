@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Static configuration describing supported Base networks, chain IDs, RPC endpoints, and explorer URLs.",
+  "networks": {
+    "base-mainnet": {
+      "name": "Base Mainnet",
+      "chainId": 8453,
+      "networkId": "base",
+      "nativeCurrency": {
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": {
+        "default": "https://mainnet.base.org",
+        "fallbacks": [
+          "https://base.llamarpc.com",
+          "https://rpc.ankr.com/base"
+        ]
+      },
+      "explorer": {
+        "name": "BaseScan",
+        "url": "https://basescan.org",
+        "api": "https://api.basescan.org/api"
+      },
+      "testnet": false
+    },
+
+    "base-sepolia": {
+      "name": "Base Sepolia",
+      "chainId": 84532,
+      "networkId": "base-sepolia",
+      "nativeCurrency": {
+        "name": "Sepolia Ether",
+        "symbol": "ETH",
+        "decimals": 18
+      },
+      "rpc": {
+        "default": "https://sepolia.base.org",
+        "fallbacks": [
+          "https://base-sepolia-rpc.publicnode.com"
+        ]
+      },
+      "explorer": {
+        "name": "BaseScan Sepolia",
+        "url": "https://sepolia.basescan.org",
+        "api": "https://api-sepolia.basescan.org/api"
+      },
+      "testnet": true
+    }
+  },
+
+  "defaults": {
+    "network": "base-mainnet",
+    "rpcTimeoutMs": 10000,
+    "confirmations": 2
+  }
+}
